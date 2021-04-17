@@ -32,10 +32,10 @@ This application provides users with food recipe choices based on their selectio
     THEN the recipes should be presented in cards
 
 ## Wireframes
-![project wireframe](./assets/images/Wireframing-Project-1.png) 
+![project wireframe](./assets/Wireframing-Project-1.png) 
 
 ## Screenshot
-![screenshot](./assets/wireframing-project-1.png)
+
 
 ## APIs
 * [Edamam Recipe Search](https://developer.edamam.com/edamam-docs-recipe-api)
