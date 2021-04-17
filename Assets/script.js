@@ -25,9 +25,7 @@ const vegetarian = document.getElementById('vegetarian');
 const porkFree = document.getElementById('porkFree');
 const kosher = document.getElementById('kosher');
 const soy = document.getElementById('soy');
-
-var cardAppend = document.getElementsByClassName("card");
-var clearResults = document.getElementById("clearResults");
+const drinks = document.getElementById('drinks');
 
 //Coding Starts Here:
 
@@ -97,6 +95,11 @@ soy.addEventListener("click", function (e) {
     showDiv(searchTermSoy); //when checked
 }, { once: true }); //disable once clicked once
 
+drinks.addEventListener("click", function (e) {
+    console.log(e.target)
+    showDiv(searchTermSoy); //when checked
+}, { once: true }); //disable once clicked once
+
 
 // //Event Listner for click to toggle
 // var playlist_buttons = document.getElementsByClassName('fas fa-plus');
@@ -117,7 +120,7 @@ soy.addEventListener("click", function (e) {
 //API response:
 function searchAPI(searchTerm) {
 
-var RECIPE_SEARCH_ENDPOINT = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=10&calories=591-722`;
+var RECIPE_SEARCH_ENDPOINT = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=30&calories=591-722`;
 
 fetch(RECIPE_SEARCH_ENDPOINT)
     .then((res) => (res.json())
@@ -125,11 +128,13 @@ fetch(RECIPE_SEARCH_ENDPOINT)
             console.log(data);
 
             var cardAppend = document.getElementsByClassName("card");
+            var recipesEL = document.getElementById('recipe-returns');
+            recipesEL.innerHTML = "";
 
             for (var i = 0; i < data.hits.length; i++) {
 
                 // create card elements
-                var recipesEL = document.getElementById('recipe-returns');
+                
 
                 var cardEl = document.createElement('div');
                 cardEl.classList.add('card');

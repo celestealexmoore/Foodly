@@ -32,7 +32,7 @@ This application provides users with food recipe choices based on their selectio
     THEN the recipes should be presented in cards
 
 ## Wireframes
-![project wireframe](./assets/Wireframing-Project-1.png) 
+![project wireframe](/.Assets/Wireframing-Project-1.png) 
 
 ## Screenshot
 
