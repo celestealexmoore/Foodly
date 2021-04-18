@@ -31,6 +31,9 @@ This application provides users with food recipe choices based on their selectio
     WHEN the user is viewing the resulting recipes 
     THEN the recipes should be presented in cards
 
+## Link to Deployed Website
+This site is hosted at:  https://celestealexmoore.github.io/Project-1/
+
 ## Wireframes
 ![project wireframe](./Assets/Wireframing-Project-1.png) 
 
@@ -39,7 +42,7 @@ This application provides users with food recipe choices based on their selectio
 ![project wireframe](./Assets/Screen-Shot-2.png) 
 
 
-## APIs
+## APIs Used
 * [Edamam Recipe Search](https://developer.edamam.com/edamam-docs-recipe-api)
 * [Edamam Nutrition Analysis](https://developer.edamam.com/edamam-docs-nutrition-api)
 
@@ -47,24 +50,22 @@ This application provides users with food recipe choices based on their selectio
 * [Materialize](https://materializecss.com/)
 
 ## Roles
-### 🎨 Frontend and Backend Developers/Designers: 
+### 🎨 Frontend Developer/Designer: 
 * [Celeste Moore](https://github.com/celestealexmoore)
-* [Terence Chaney](https://github.com/tchaney0327)
-* [Mohammed Ottun]() 
-* [Cesar De La Portilla](https://github.com/DLP713)
-### 👨‍💼  Product Owner: 
-* [Terence Chaney](https://github.com/tchaney0327)
+### Backend Developers: 
+* [Celeste Moore](https://github.com/celestealexmoore)
+* [Mohammed Ottun](https://github.com/MohammedOttun)
 ### 🥸  Quality Assurances: 
 * [Celeste Moore](https://github.com/celestealexmoore)
 * [Terence Chaney](https://github.com/tchaney0327)
 * [Cesar De La Portilla](https://github.com/DLP713)
 * [Mohammed Ottun](https://github.com/MohammedOttun)
 
-### 
+### Student Grading Scale
 
 | Letter |      Name            |
+|:------:|:--------------------:| 
 |   A    | Mohammed Ottun       |
 |   B    | Cesar De La Portilla |
 |   C    | Terrence Chaney      |
 
-This site is hosted at:  https://celestealexmoore.github.io/Project-1/
