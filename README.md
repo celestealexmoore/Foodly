@@ -34,7 +34,9 @@ This application provides users with food recipe choices based on their selectio
 ## Wireframes
 ![project wireframe](/.Assets/Wireframing-Project-1.png) 
 
-## Screenshot
+## Screenshots
+![project wireframe](./Assets/Screen-Shot-1.png) 
+![project wireframe](./Assets/Screen-Shot-2.png) 
 
 
 ## APIs

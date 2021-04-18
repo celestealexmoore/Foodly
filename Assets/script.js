@@ -29,25 +29,6 @@ const drinks = document.getElementById('drinks');
 
 //Coding Starts Here:
 
-// function clearCards() {
-//     //hide bottom section
-//     var bottomSection = document.getElementById("recipe-returns")
-//     bottomSection.innerHTML = "";
-// };
-
-// clearResults.addEventListener("click", function (e) {
-//     clearCards();   //when checked
-// }, { once: true }); //disable once clicked once
-
-
-// function clearDiv(cardAppend){
-//     document.getElementById(clearResults).innerHTML= "";
-// }
-
-// clearResults.addEventListener("click", clearDiv(cardAppend));
-
-
-
 function showDiv(inputSearchTerm) {
     //hide bottom section
     var bottomSection = document.getElementById("bottom-section")
@@ -61,73 +42,68 @@ function showDiv(inputSearchTerm) {
 //Event listener to console log and show gluten cards:
 
 glutenAllergy.addEventListener("click", function (e) {
-    console.log(true)
     showDiv(searchTermGluten); //when checked
 }, { once: true }); //disable once clicked once
 
 peanutAllergy.addEventListener("click", function (e) {
-    console.log(e.target)
     showDiv(searchTermPeanut); //when checked
 }, { once: true }); //disable once clicked once
 
 vegan.addEventListener("click", function (e) {
-    console.log(e.target)
     showDiv(searchTermVegan); //when checked
 }, { once: true }); //disable once clicked once
 
 vegetarian.addEventListener("click", function (e) {
-    console.log(e.target)
     showDiv(searchTermVegetarian); //when checked
 }, { once: true }); //disable once clicked once
 
 porkFree.addEventListener("click", function (e) {
-    console.log(e.target)
     showDiv(searchTermPorkFree); //when checked
 }, { once: true }); //disable once clicked once
 
 kosher.addEventListener("click", function (e) {
-    console.log(e.target)
     showDiv(searchTermKosher); //when checked
 }, { once: true }); //disable once clicked once
 
 soy.addEventListener("click", function (e) {
-    console.log(e.target)
     showDiv(searchTermSoy); //when checked
 }, { once: true }); //disable once clicked once
 
 drinks.addEventListener("click", function (e) {
-    console.log(e.target)
     showDiv(searchTermSoy); //when checked
 }, { once: true }); //disable once clicked once
 
 
-// //Event Listner for click to toggle
-// var playlist_buttons = document.getElementsByClassName('fas fa-plus');
-// for (var i = 0; i < playlist_buttons.length; i++) {
-//     playlist_buttons[i].addEventListener('click', togglePlaylistButton);
-// }
-// //Toggle Function
-// function change(iconID) {
-//     if (document.getElementById(iconID).className == "fa fas fa-plus") {
-//         document.getElementById(iconID).className = "fas fa-check";
-//     } else {
-//         document.getElementById(iconID).className = "fa fas fa-plus";
-//     }
-// }
+//Event Listner for click to toggle
+var favorite_buttons = document.getElementsByClassName('fas fa-plus');
+for (var i = 0; i < favorite_buttons.length; i++) {
+    favorite_buttons[i].addEventListener('click', togglePlaylistButton);
+}
+function newFunction(e) {
+    console.log(e.target);
+}
+
+//Toggle Function
+function change(iconID) {
+    if (document.getElementById(iconID).className == "fas fa-plus") {
+        document.getElementById(iconID).className = "fas fa-check";
+    } else {
+        document.getElementById(iconID).className = "fas fa-plus";
+    }
+}
 
 
 
 //API response:
 function searchAPI(searchTerm) {
 
-var RECIPE_SEARCH_ENDPOINT = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=30&calories=591-722`;
+var RECIPE_SEARCH_ENDPOINT = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=50&calories=591-722`;
 
 fetch(RECIPE_SEARCH_ENDPOINT)
     .then((res) => (res.json())
         .then((data) => {
             console.log(data);
 
-            var cardAppend = document.getElementsByClassName("card");
             var recipesEL = document.getElementById('recipe-returns');
             recipesEL.innerHTML = "";
 
@@ -138,7 +114,6 @@ fetch(RECIPE_SEARCH_ENDPOINT)
 
                 var cardEl = document.createElement('div');
                 cardEl.classList.add('card');
-                cardEl.setAttribute('href', `${data.hits[i].recipe.url}`);
                 recipesEL.appendChild(cardEl);
 
                 var cardContentEl = document.createElement('div');
@@ -150,7 +125,10 @@ fetch(RECIPE_SEARCH_ENDPOINT)
 
                 var cardImageEl = document.createElement('img');
                 cardImageEl.classList.add('card-image');
-                cardImageEl.setAttribute('src', `${data.hits[i].recipe.image}`);
+                cardImageEl.setAttribute(
+                    'src', 
+                    `${data.hits[i].recipe.image}`
+                );
 
                 var iconWrapperEl = document.createElement('div');
                 iconWrapperEl.classList.add('iconwrapper');
@@ -166,7 +144,10 @@ fetch(RECIPE_SEARCH_ENDPOINT)
 
                 var cardLinkEL = document.createElement('a');
                 cardLinkEL.classList.add('card-url');
-                cardLinkEL.setAttribute('href', `${data.hits[i].recipe.url}`);
+                cardLinkEL.setAttribute(
+                    'href', 
+                    `${data.hits[i].recipe.url}`
+                );
                 cardLinkEL.textContent = "Click to view recipe!"
 
                 // build card elements
@@ -176,6 +157,21 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                 cardEl.appendChild(iconWrapperEl);
                 cardEl.appendChild(cardLinkEL);
 
+                    //I want the to parse the info to localStorage AFTER the info is appended.
+                var cardEls =
+                JSON.parse(window.localStorage.getItem("cardEl")) || [];
+                    // format object
+                yourFavorite ={
+                    cardEl, cardContentEl, cardImageEl, cardLinkEL
+                };
+
+                //
+
+
+
+
+                //console.log(JSON.stringify({}))
+
             };
 
         })
@@ -183,6 +179,10 @@ fetch(RECIPE_SEARCH_ENDPOINT)
     );
 
 }
+
+//localStorage.setItem
+
+console.log("Favorite Cards Info: ", cardEl);
 
 // For adding data to Local Storage
 // favoriteRecipe.addEventListener("click", function(event){
@@ -351,23 +351,4 @@ fetch(RECIPE_SEARCH_ENDPOINT)
 // // var iconWrapper = document.getElementsByClassName("icon-wrapper");
 
 
-// // localStorage.setItem("Favorite Cards Info: ", cardTitle, cardImage, cardURL);
-
-// //hide data in data attribute tags
-
-// //once you get the data, then we can set in local storage
-// //get the onclick first
-// //console log on-click
-// //console log event.target
-// //set up an event listener to the body(the whole document)
-// //if event.target has savedRecipe class, we don't have to assign individual event listeners.
-
-
-
-
-
-// // function clearCards(cardAppend){
-// //     cardAppend.remove('card-content');
-// //     cardAppend.remove('card-image');
-// //     cardAppend.remove('card-url');
-// // }
+localStorage.setItem("Favorite Cards Info: ", cardTitle, cardImage, cardURL);

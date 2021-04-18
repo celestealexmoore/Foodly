@@ -101,7 +101,7 @@ body{
 
 .card{
     width: 300px;
-    height: 400px;
+    height: 450px;
     padding: 25px;
     text-align: center;
     display:flex;
@@ -121,10 +121,11 @@ body{
     font-weight:lighter;
     width: 98%;
     height:15%;
+    z-index:1;
 }
 
 .card-title{
-    margin-top: -25px;
+    margin-top: -30px;
     height: 100%;
     z-index:1;
     color:rgb(39, 70, 39);
@@ -132,7 +133,7 @@ body{
 
 .card-image {
     width:100%;
-    margin-top:-25px;
+    margin-top:80px;
     z-index:0;
     border-radius: 5px;
 }
@@ -143,7 +144,7 @@ body{
 
 .card-url{
     position:absolute;
-    margin-top: 350px;
+    margin-top: 400px;
     color: rgb(39, 70, 39, 0.9);
     /*The 0.5 at the end of the color is for opacity.*/
     margin-left:65px;
