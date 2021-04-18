@@ -2,34 +2,32 @@
 
 ## Description
 
-It's not alwasys an enjoyable experience to hunt for food recipes, especially if you have a limited number of ingredients available on hand. It can be worse, when you have dietary restrictions.
+It's not always an enjoyable experience to hunt for food recipes, especially if you have dietary restrictions.
 
-This application provides users with food recipe choices based on their selection of what they would like as ingredients and what they would like to exclude.
+This application provides users with food recipe choices based on those restrictions.
 
 ## User Story
 
     AS A User with Dietary restrictions
-    I WANT to provide a list of ingredients
-    SO THAT I can get recipe ideas
+    I WANT to search for recipes according to my needs
+    SO THAT I can get great recipe ideas
 
 
 ## Acceptance Criteria
-
-    GIVEN that a user has started to enter an ingredient in the 'I want' field
-    WHEN the user starts to type
-    THEN the ingredient name is autocompleted with suggestions
     
-    GIVEN that a user has started to enter an ingredient in the 'I dont want' field
-    WHEN the user starts to type
-    THEN the ingredient name is autocompleted with suggestions
-    
-    GIVEN that a user has entered ingredient choices
-    WHEN clicks on the 'Get My Recipe' button
-    THEN user should be presented with recipe choices.
+    GIVEN that a user is presented with dietary restricitons to choose from.
+    WHEN the user clicks on the dietary restriction
+    THEN the user should be presented with 50 recipe choices in cards.
     
     GIVEN that a user has been presented with recipe choices
-    WHEN the user is viewing the resulting recipes 
-    THEN the recipes should be presented in cards
+    WHEN the user favorites a recipe by clicking an icon inside the card
+    THEN the recipes should be stored in localStorage, to be later viewed again.
+    
+    GIVEN that a user wants to recall a recipe previously favorited
+    WHEN the user clicks the 'My Favorites' button
+    THEN the recipes stored will appear.
+
+
 
 ## Link to Deployed Website
 This site is hosted at:  https://celestealexmoore.github.io/Project-1/
