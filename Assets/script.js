@@ -75,27 +75,6 @@ drinks.addEventListener("click", function (e) {
 }, { once: true }); //disable once clicked once
 
 
-//Event Listner for click to toggle
-var favorite_buttons = document.getElementsByClassName('fas fa-plus');
-for (var i = 0; i < favorite_buttons.length; i++) {
-    favorite_buttons[i].addEventListener('click', change);
-    console.log(e.target);
-}
-// function newFunction(e) {
-//     console.log(e.target);
-// }
-
-//Toggle Function
-function change(iconId) {
-    if (document.getElementById(iconId).className == "fas fa-plus") {
-        document.getElementById(iconId).className = "fas fa-check";
-    } else {
-        document.getElementById(iconId).className = "fas fa-plus";
-    }
-}
-
-
-
 //API response:
 function searchAPI(searchTerm) {
 
@@ -145,9 +124,9 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                 //icon
                 var iconWrapperEl = document.createElement('div');
                 iconWrapperEl.classList.add('iconwrapper');
-                var iconEl = document.createElement('i');
-                iconEl.classList.add('fas');
-                iconEl.classList.add('fa-plus');
+                var iconEl = document.createElement('i'); //This refers to i = 0 in for loop.
+                iconEl.classList.add('fas', 'fa-plus');
+                //iconEl.classList.add('fa-plus');
                 iconEl.setAttribute('id', "iconId");
                 iconEl.setAttribute('onClick', "change('iconId')");
                 iconEl.setAttribute('aria-disabled', 'true');
@@ -162,27 +141,36 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                 cardEl.appendChild(cardLinkEL);
 
                     //I want the to parse the info to localStorage AFTER the info is appended.
-                var cardEls =
+                var cardEl =
                 JSON.parse(window.localStorage.getItem("cardEl")) || [];
                     // format object
                 yourFavorite ={
                     cardEl, cardContentEl, cardImageEl, cardLinkEL
                 };
 
-                //
-
-
-
-
                 //console.log(JSON.stringify({}))
-
             };
-
         })
-
     );
-
 }
+//Event Listner for click to toggle
+var favorite_buttons = document.getElementsByClassName('fas fa-plus');
+for (var i = 0; i < favorite_buttons.length; i++) {
+    favorite_buttons[i].addEventListener('click', change);
+}
+
+//Toggle Function
+function change(iconId) {
+    if (document.getElementById(iconId).className = "fas fa-plus") {
+        document.getElementById(iconId).className = "fas fa-check";
+    } else {
+        document.getElementById(iconId).className = "fas fa-plus";
+    }
+}
+
+
+
+
 
 //localStorage.setItem
 

@@ -62,8 +62,9 @@ This application provides users with food recipe choices based on their selectio
 
 ### 
 
-| Attempt | #1  | #2  |
-| :-----: | :-: | :-: |
-| Seconds | 301 | 283 |
+| Letter |      Name            |
+|   A    | Mohammed Ottun       |
+|   B    | Cesar De La Portilla |
+|   C    | Terrence Chaney      |
 
 This site is hosted at:  https://celestealexmoore.github.io/Project-1/
