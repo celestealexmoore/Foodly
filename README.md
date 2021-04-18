@@ -60,4 +60,10 @@ This application provides users with food recipe choices based on their selectio
 * [Cesar De La Portilla](https://github.com/DLP713)
 * [Mohammed Ottun](https://github.com/MohammedOttun)
 
+### 
+
+| Attempt | #1  | #2  |
+| :-----: | :-: | :-: |
+| Seconds | 301 | 283 |
+
 This site is hosted at:  https://celestealexmoore.github.io/Project-1/

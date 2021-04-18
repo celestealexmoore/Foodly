@@ -6,6 +6,8 @@ var searchTerm;
 // For sending data for favorite recipes to local storage
 
 var favoriteRecipe = document.querySelector("#iconwrapper");
+var bottomSection = document.getElementById("bottom-section")
+var recipesEL = document.getElementById('recipe-returns');
 
 // These are used with the API response
 const searchTermGluten = 'Gluten Free';
@@ -31,7 +33,6 @@ const drinks = document.getElementById('drinks');
 
 function showDiv(inputSearchTerm) {
     //hide bottom section
-    var bottomSection = document.getElementById("bottom-section")
     bottomSection.setAttribute("class", "hide");
 
     searchAPI(inputSearchTerm);
@@ -77,18 +78,19 @@ drinks.addEventListener("click", function (e) {
 //Event Listner for click to toggle
 var favorite_buttons = document.getElementsByClassName('fas fa-plus');
 for (var i = 0; i < favorite_buttons.length; i++) {
-    favorite_buttons[i].addEventListener('click', togglePlaylistButton);
-}
-function newFunction(e) {
+    favorite_buttons[i].addEventListener('click', change);
     console.log(e.target);
 }
+// function newFunction(e) {
+//     console.log(e.target);
+// }
 
 //Toggle Function
-function change(iconID) {
-    if (document.getElementById(iconID).className == "fas fa-plus") {
-        document.getElementById(iconID).className = "fas fa-check";
+function change(iconId) {
+    if (document.getElementById(iconId).className == "fas fa-plus") {
+        document.getElementById(iconId).className = "fas fa-check";
     } else {
-        document.getElementById(iconID).className = "fas fa-plus";
+        document.getElementById(iconId).className = "fas fa-plus";
     }
 }
 
@@ -102,16 +104,15 @@ var RECIPE_SEARCH_ENDPOINT = `https://api.edamam.com/search?q=${searchTerm}&app_
 fetch(RECIPE_SEARCH_ENDPOINT)
     .then((res) => (res.json())
         .then((data) => {
-            console.log(data);
+            //console.log(data);
 
-            var recipesEL = document.getElementById('recipe-returns');
             recipesEL.innerHTML = "";
 
             for (var i = 0; i < data.hits.length; i++) {
-
+                console.log(data.hits[i])
                 // create card elements
                 
-
+                //card itself
                 var cardEl = document.createElement('div');
                 cardEl.classList.add('card');
                 recipesEL.appendChild(cardEl);
@@ -119,10 +120,12 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                 var cardContentEl = document.createElement('div');
                 cardContentEl.classList.add('card-content');
 
+                // card title
                 var cardTitleEl = document.createElement('h6');
                 cardTitleEl.classList.add('card-title');
                 cardTitleEl.textContent = data.hits[i].recipe.label;
 
+                //card image
                 var cardImageEl = document.createElement('img');
                 cardImageEl.classList.add('card-image');
                 cardImageEl.setAttribute(
@@ -130,18 +133,7 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                     `${data.hits[i].recipe.image}`
                 );
 
-                var iconWrapperEl = document.createElement('div');
-                iconWrapperEl.classList.add('iconwrapper');
-                var iconEl = document.createElement('i');
-                iconEl.classList.add('fas');
-                iconEl.classList.add('fa-plus');
-                iconEl.setAttribute('id', "icon1");
-                iconEl.setAttribute('onClick', "change('icon1')");
-                iconEl.setAttribute('aria-disabled', 'true');
-                iconEl.setAttribute('hidden', "true");
-                iconWrapperEl.appendChild(iconEl);
-
-
+                // card link
                 var cardLinkEL = document.createElement('a');
                 cardLinkEL.classList.add('card-url');
                 cardLinkEL.setAttribute(
@@ -150,7 +142,19 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                 );
                 cardLinkEL.textContent = "Click to view recipe!"
 
-                // build card elements
+                //icon
+                var iconWrapperEl = document.createElement('div');
+                iconWrapperEl.classList.add('iconwrapper');
+                var iconEl = document.createElement('i');
+                iconEl.classList.add('fas');
+                iconEl.classList.add('fa-plus');
+                iconEl.setAttribute('id', "iconId");
+                iconEl.setAttribute('onClick', "change('iconId')");
+                iconEl.setAttribute('aria-disabled', 'true');
+                iconEl.setAttribute('hidden', "true");
+                iconWrapperEl.appendChild(iconEl);
+
+                // append card elements
                 cardEl.appendChild(cardContentEl);
                 cardContentEl.appendChild(cardTitleEl);
                 cardEl.appendChild(cardImageEl);
@@ -182,7 +186,7 @@ fetch(RECIPE_SEARCH_ENDPOINT)
 
 //localStorage.setItem
 
-console.log("Favorite Cards Info: ", cardEl);
+//console.log("Favorite Cards Info: ", cardEl);
 
 // For adding data to Local Storage
 // favoriteRecipe.addEventListener("click", function(event){
@@ -199,6 +203,15 @@ console.log("Favorite Cards Info: ", cardEl);
 //     var submissionParse = JSON.parse(localStorage.getItem("submission"));
 // });
 
+
+// // var card = document.getElementsByClassName("card");
+// // var cardTitle = document.getElementById("card-title");
+// // var cardImage = document.getElementById("card-image");
+// // var cardURL = document.getElementById("card-url");
+// // var iconWrapper = document.getElementsByClassName("icon-wrapper");
+
+
+//localStorage.setItem("Favorite Cards Info: ", cardTitle, cardImage, cardURL);
 
 
 
@@ -248,53 +261,6 @@ console.log("Favorite Cards Info: ", cardEl);
 
 
 
-// // Food API response:
-// function searchAPI(searchTerm) {
-
-//     var endpoint = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=10&calories=591-722`;
-
-//     fetch(endpoint)
-//         .then((res) => (res.json())
-//         .then((data) => {
-//             console.log(data);
-
-//             var cardAppend = document.getElementsByClassName("card");
-
-//             for (var i = 0; i < data.hits.length; i++){
-
-//                 var cardAppend = document.getElementsByClassName("card");
-//                 // cardAppend.innerHTML = "";
-
-//                 var cardTitle = document.createElement('h6');
-//                 cardTitle.classList.add('card-title');
-//                 cardTitle.textContent = data.hits[i].recipe.label;
-
-//                 var cardLink = document.createElement('a');
-//                 cardLink.classList.add('card-url');
-//                 cardLink.setAttribute(
-//                     'href',
-//                     `${data.hits[i].recipe.url}`
-//                 );
-//                 cardLink.textContent = "Click to view recipe!"
-//                 console.log(cardLink);
-
-//                 var cardImage = document.createElement('img');
-//                 cardImage.classList.add('card-image');
-//                 cardImage.setAttribute(
-//                     'src',
-//                      `${data.hits[i].recipe.image}`
-//                 );
-
-//                 cardAppend[i].appendChild(cardTitle);
-//                 cardAppend[i].appendChild(cardImage);
-//                 cardAppend[i].appendChild(cardLink);
-//                 console.log(cardAppend[i])
-//             };
-//         })
-        
-//     );
-// }
-
 // //Drinks API Reponse
 
 // function getDrinks(){
@@ -341,14 +307,3 @@ console.log("Favorite Cards Info: ", cardEl);
 
 //     );
 // };
-
-
-
-// // var card = document.getElementsByClassName("card");
-// // var cardTitle = document.getElementById("card-title");
-// // var cardImage = document.getElementById("card-image");
-// // var cardURL = document.getElementById("card-url");
-// // var iconWrapper = document.getElementsByClassName("icon-wrapper");
-
-
-localStorage.setItem("Favorite Cards Info: ", cardTitle, cardImage, cardURL);
