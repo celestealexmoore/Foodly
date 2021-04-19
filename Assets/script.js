@@ -8,6 +8,7 @@ var searchTerm;
 var favoriteRecipe = document.querySelector("#iconwrapper");
 var bottomSection = document.getElementById("bottom-section")
 var recipesEL = document.getElementById('recipe-returns');
+var iconIndex = 0;
 
 // These are used with the API response
 const searchTermGluten = 'Gluten Free';
@@ -127,8 +128,10 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                 var iconEl = document.createElement('i'); //This refers to i = 0 in for loop.
                 iconEl.classList.add('fas', 'fa-plus');
                 //iconEl.classList.add('fa-plus');
-                iconEl.setAttribute('id', "iconId");
-                iconEl.setAttribute('onClick', "change('iconId')");
+                iconEl.setAttribute('id', iconIndex++);
+                //the problem is the ids on these elements are all the same, so the computer will return 
+                //the very first element that matches that criteria
+                iconEl.setAttribute('onClick', "change('iconIndex')");
                 iconEl.setAttribute('aria-disabled', 'true');
                 iconEl.setAttribute('hidden', "true");
                 iconWrapperEl.appendChild(iconEl);
@@ -160,11 +163,11 @@ for (var i = 0; i < favorite_buttons.length; i++) {
 }
 
 //Toggle Function
-function change(iconId) {
-    if (document.getElementById(iconId).className = "fas fa-plus") {
-        document.getElementById(iconId).className = "fas fa-check";
+function change(iconIndex) {
+    if (document.getElementById(iconIndex).className = "fas fa-plus") {
+        document.getElementById(iconIndex).className = "fas fa-check";
     } else {
-        document.getElementById(iconId).className = "fas fa-plus";
+        document.getElementById(iconIndex).className = "fas fa-plus";
     }
 }
 

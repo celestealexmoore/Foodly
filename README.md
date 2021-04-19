@@ -59,11 +59,12 @@ This site is hosted at:  https://celestealexmoore.github.io/Project-1/
 * [Cesar De La Portilla](https://github.com/DLP713)
 * [Mohammed Ottun](https://github.com/MohammedOttun)
 
-### Student Grading Scale
+### Student Grading Reference
 
 | Letter |      Name            |
 |:------:|:--------------------:| 
 |   A    | Mohammed Ottun       |
 |   B    | Cesar De La Portilla |
 |   C    | Terrence Chaney      |
+|   D    | Celeste Moore        |
 
