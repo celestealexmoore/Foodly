@@ -88,12 +88,16 @@ fetch(RECIPE_SEARCH_ENDPOINT)
 
             recipesEL.innerHTML = "";
 
+
             for (var i = 0; i < data.hits.length; i++) {
-                console.log(data.hits[i])
+            
                 // create card elements
+
+                
                 
                 //card itself
                 var cardEl = document.createElement('div');
+                
                 cardEl.classList.add('card');
                 recipesEL.appendChild(cardEl);
 
@@ -128,10 +132,33 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                 var iconEl = document.createElement('i'); //This refers to i = 0 in for loop.
                 iconEl.classList.add('fas', 'fa-plus');
                 //iconEl.classList.add('fa-plus');
-                iconEl.setAttribute('id', iconIndex++);
-                //the problem is the ids on these elements are all the same, so the computer will return 
-                //the very first element that matches that criteria
-                iconEl.setAttribute('onClick', "change('iconIndex')");
+                iconEl.setAttribute('id','icon-'+ i);
+               
+                 
+                    iconEl.setAttribute('data-title', data.hits[i].recipe.label)
+                    iconEl.setAttribute('data-recipe', data.hits[i].recipe.url)
+                    iconEl.setAttribute('data-picture',data.hits[i].recipe.image)
+
+
+
+    
+                iconEl.addEventListener('click', function() {
+
+                    const currentCardInfo = this.dataset
+                    console.log('CURRENT INFO +> ', currentCardInfo)
+
+                    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                    
+                    favorites.push(currentCardInfo)
+
+                    localStorage.setItem('favorites', JSON.stringify(favorites))
+
+                    change(this.id)
+                })
+
+
+
+
                 iconEl.setAttribute('aria-disabled', 'true');
                 iconEl.setAttribute('hidden', "true");
                 iconWrapperEl.appendChild(iconEl);
@@ -163,11 +190,11 @@ for (var i = 0; i < favorite_buttons.length; i++) {
 }
 
 //Toggle Function
-function change(iconIndex) {
-    if (document.getElementById(iconIndex).className = "fas fa-plus") {
-        document.getElementById(iconIndex).className = "fas fa-check";
+function change(iconId) {
+    if (document.getElementById(iconId).className = "fas fa-plus") {
+        document.getElementById(iconId).className = "fas fa-check";
     } else {
-        document.getElementById(iconIndex).className = "fas fa-plus";
+        document.getElementById(iconId).className = "fas fa-plus";
     }
 }
 
