@@ -15,7 +15,7 @@ const searchTermGluten = 'Gluten Free';
 const searchTermPeanut = 'Peanut Free';
 const searchTermVegan = 'Vegan';
 const searchTermVegetarian = 'Vegetarian';
-const searchTermPorkFree = 'Pork Free';
+const searchTermPork = 'Pork Free';
 const searchTermKosher = 'Kosher';
 const searchTermSoy = 'Soy-Free"';
 
@@ -25,7 +25,7 @@ const glutenAllergy = document.getElementById('glutenAllergy');
 const peanutAllergy = document.getElementById('peanutAllergy');
 const vegan = document.getElementById('vegan');
 const vegetarian = document.getElementById('vegetarian');
-const porkFree = document.getElementById('porkFree');
+const pork = document.getElementById('pork');
 const kosher = document.getElementById('kosher');
 const soy = document.getElementById('soy');
 const drinks = document.getElementById('drinks');
@@ -59,8 +59,8 @@ vegetarian.addEventListener("click", function (e) {
     showDiv(searchTermVegetarian); //when checked
 }, { once: true }); //disable once clicked once
 
-porkFree.addEventListener("click", function (e) {
-    showDiv(searchTermPorkFree); //when checked
+pork.addEventListener("click", function (e) {
+    showDiv(searchTermPork); //when checked
 }, { once: true }); //disable once clicked once
 
 kosher.addEventListener("click", function (e) {
@@ -200,83 +200,11 @@ function change(iconId) {
 
 
 
-
-
-//localStorage.setItem
-
-//console.log("Favorite Cards Info: ", cardEl);
-
-// For adding data to Local Storage
-// favoriteRecipe.addEventListener("click", function(event){
-//     event.preventDefault();
-
-//     var submission ={
-//         favoriteRecipe: favoriteRecipe.value,
-//     };
-
-//     console.log(JSON.stringify(submission));
-
-//     localStorage.setItem("submission", JSON.stringify(submission));
-
-//     var submissionParse = JSON.parse(localStorage.getItem("submission"));
-// });
-
-
-// // var card = document.getElementsByClassName("card");
-// // var cardTitle = document.getElementById("card-title");
-// // var cardImage = document.getElementById("card-image");
-// // var cardURL = document.getElementById("card-url");
-// // var iconWrapper = document.getElementsByClassName("icon-wrapper");
-
-
-//localStorage.setItem("Favorite Cards Info: ", cardTitle, cardImage, cardURL);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // //Cocktail DB API
 // var secondAPI_Key = '519edcda2bmsh4a3f4a4b9c212a7p1e48cbjsn13d93864b7f1';
-
 // // For sending data for favorite recipes to local storage
-
 // var favoriteRecipe = document.querySelector("#iconwrapper");
-
-
 // const drinks = document.getElementById('drinks');
-
-// var clearResults = document.getElementById("clearResults");
-
-
 
 
 // //Drinks API Reponse
