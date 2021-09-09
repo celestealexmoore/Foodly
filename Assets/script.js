@@ -11,13 +11,18 @@ var recipesEL = document.getElementById('recipe-returns');
 var iconIndex = 0;
 
 // These are used with the API response
-const searchTermGluten = 'Gluten Free';
-const searchTermPeanut = 'Peanut Free';
+const searchTermGluten = 'Gluten-Free';
+const searchTermPeanut = 'Peanut-Free';
 const searchTermVegan = 'Vegan';
 const searchTermVegetarian = 'Vegetarian';
-const searchTermPork = 'Pork Free';
+const searchTermPork = 'Pork-Free';
 const searchTermKosher = 'Kosher';
 const searchTermSoy = 'Soy-Free"';
+const searchTermEgg = 'Egg-Free';
+const searchTermRedMeat = 'Red-Meat-Free';
+const searchTermFish = 'Fish-Free'
+const searchTermShellfish = 'Shellfish-Free';
+const searchTermWheat = 'Wheat-Free'
 
 //These are for the checkboxes
 const card = document.getElementsByClassName("card");
@@ -25,10 +30,15 @@ const glutenAllergy = document.getElementById('glutenAllergy');
 const peanutAllergy = document.getElementById('peanutAllergy');
 const vegan = document.getElementById('vegan');
 const vegetarian = document.getElementById('vegetarian');
-const pork = document.getElementById('pork');
+const pork = document.getElementById('porkFree');
 const kosher = document.getElementById('kosher');
 const soy = document.getElementById('soy');
 const drinks = document.getElementById('drinks');
+const egg = document.getElementById('egg');
+const redMeat = document.getElementById('redMeat');
+const fish = document.getElementById('fish');
+const shellfish = document.getElementById('shellfish');
+const wheat = document.getElementById('wheat');
 
 //Coding Starts Here:
 
@@ -69,6 +79,26 @@ kosher.addEventListener("click", function (e) {
 
 soy.addEventListener("click", function (e) {
     showDiv(searchTermSoy); //when checked
+}, { once: true }); //disable once clicked once
+
+egg.addEventListener("click", function (e) {
+    showDiv(searchTermEgg); //when checked
+}, { once: true }); //disable once clicked once
+
+redMeat.addEventListener("click", function (e) {
+    showDiv(searchTermRedMeat); //when checked
+}, { once: true }); //disable once clicked once
+
+fish.addEventListener("click", function (e) {
+    showDiv(searchTermFish); //when checked
+}, { once: true }); //disable once clicked once
+
+shellfish.addEventListener("click", function (e) {
+    showDiv(searchTermShellfish); //when checked
+}, { once: true }); //disable once clicked once
+
+wheat.addEventListener("click", function (e) {
+    showDiv(searchTermWheat); //when checked
 }, { once: true }); //disable once clicked once
 
 drinks.addEventListener("click", function (e) {
