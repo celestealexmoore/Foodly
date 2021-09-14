@@ -15,7 +15,7 @@ This application provides users with food recipe choices based on those restrict
 
 ## Acceptance Criteria
     
-    GIVEN that a user is presented with dietary restricitons to choose from.
+    GIVEN that a user is presented with dietary restrictions to choose from.
     WHEN the user clicks on the dietary restriction
     THEN the user should be presented with 50 recipe choices in cards.
     
@@ -23,14 +23,14 @@ This application provides users with food recipe choices based on those restrict
     WHEN the user favorites a recipe by clicking an icon inside the card
     THEN the recipes should be stored in localStorage, to be later viewed again.
     
-    GIVEN that a user wants to recall a recipe previously favorited
+    GIVEN that a user wants to recall a recipe previously favored
     WHEN the user clicks the 'My Favorites' button
     THEN the recipes stored will appear.
 
 
 
 ## Link to Deployed Website
-This site is hosted at:  https://celestealexmoore.github.io/Project-1/
+This site is hosted at:  https://celestealexmoore.github.io/Foodly/
 
 ## Wireframes
 ![project wireframe](./Assets/Wireframing-Project-1.png) 
@@ -58,13 +58,4 @@ This site is hosted at:  https://celestealexmoore.github.io/Project-1/
 * [Terence Chaney](https://github.com/tchaney0327)
 * [Cesar De La Portilla](https://github.com/DLP713)
 * [Mohammed Ottun](https://github.com/MohammedOttun)
-
-### Student Grading Reference
-
-| Letter |      Name            |
-|:------:|:--------------------:| 
-|   A    | Mohammed Ottun       |
-|   B    | Cesar De La Portilla |
-|   C    | Terrence Chaney      |
-|   D    | Celeste Moore        |
 
