@@ -39,6 +39,8 @@ body{
     margin: 0 auto;
 } */
 
+/* ^^^^ Ask Bryant about why background-image property zooms and is awk with measurements */
+
 #opening-image {
     position: relative;
     max-width: 100%;
@@ -187,18 +189,18 @@ color: rgb(39, 70, 39, 0.5);
 
 @media (min-width:577px) {
     .image-1 {
-      display: block;
+    display: block;
     }
     .image-2 {
-      display: none;
+    display: none;
     }
 }
 
 @media (max-width:576px) {
     .image-1 {
-      display: none;
+    display: none;
     }
     .image-2 {
-      display: block;
+    display: block;
     }
 }
