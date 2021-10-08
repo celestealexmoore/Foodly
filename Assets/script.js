@@ -109,7 +109,7 @@ drinks.addEventListener("click", function (e) {
 //API response:
 function searchAPI(searchTerm) {
 
-var RECIPE_SEARCH_ENDPOINT = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=50&calories=591-722`;
+var RECIPE_SEARCH_ENDPOINT = `https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=6&calories=591-722`;
 
 fetch(RECIPE_SEARCH_ENDPOINT)
     .then((res) => (res.json())
@@ -164,7 +164,6 @@ fetch(RECIPE_SEARCH_ENDPOINT)
                 //iconEl.classList.add('fa-plus');
                 iconEl.setAttribute('id','icon-'+ i);
                
-                 
                     iconEl.setAttribute('data-title', data.hits[i].recipe.label)
                     iconEl.setAttribute('data-recipe', data.hits[i].recipe.url)
                     iconEl.setAttribute('data-picture',data.hits[i].recipe.image)
@@ -213,7 +212,7 @@ fetch(RECIPE_SEARCH_ENDPOINT)
         })
     );
 }
-//Event Listner for click to toggle
+//Event Listener for click to toggle
 var favorite_buttons = document.getElementsByClassName('fas fa-plus');
 for (var i = 0; i < favorite_buttons.length; i++) {
     favorite_buttons[i].addEventListener('click', change);

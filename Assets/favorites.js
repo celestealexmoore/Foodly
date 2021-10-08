@@ -5,11 +5,9 @@ const favorites = JSON.parse(localStorage.getItem('favorites')) || []
 const recipesEl = document.getElementById('recipe-returns')
 
 favorites.forEach(function(el) {
-  
 
    var cardEl = document.createElement('div');
-   cardEl.classList.add('card');
-              
+   cardEl.classList.add('card'); 
 
                 var cardContentEl = document.createElement('div');
                 cardContentEl.classList.add('card-content');
