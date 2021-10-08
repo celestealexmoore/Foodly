@@ -36,8 +36,8 @@ This site is hosted at:  https://celestealexmoore.github.io/Foodly/
 ![project wireframe](./Assets/Wireframing-Project-1.png) 
 
 ## Screenshots
-![project wireframe](./Assets/Screen-Shot-1.png) 
-![project wireframe](./Assets/Screen-Shot-2.png) 
+![project wireframe](./Assets/photos/siteImg.png) 
+![project wireframe](./Assets/photos/siteImg2.png) 
 
 
 ## APIs Used
