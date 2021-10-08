@@ -185,99 +185,20 @@ color: rgb(39, 70, 39, 0.5);
     box-shadow: 0 5px 25px #daaa88;
 }
 
-/* @media (max-width:1245px) {
-    #opening-image {
-        max-width: 100vw;
-        height: 75vh;
-        background-image: url('./photos/home.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
+@media (min-width:577px) {
+    .image-1 {
+      display: block;
     }
-    #opening-image2 {
-        max-width: 100vw;
-        height: 75vh;
-        background-image: url('./photos/home.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
+    .image-2 {
+      display: none;
     }
-
 }
 
-@media (max-width:992px) {
-    #opening-image {
-        max-width: 100vw;
-        height: 70vh;
-        background-image: url('./photos/home.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
+@media (max-width:576px) {
+    .image-1 {
+      display: none;
     }
-    #opening-image2 {
-        max-width: 100vw;
-        height: 70vh;
-        background-image: url('./photos/home.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
+    .image-2 {
+      display: block;
     }
-
 }
-
-@media (max-width:768px) {
-    #opening-image {
-        max-width: 100vw;
-        height: 65vh;
-        background-image: url('./photos/home.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
-    }
-    #opening-image2 {
-        max-width: 100vw;
-        height: 65vh;
-        background-image: url('./photos/home.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
-    }
-
-}
-
-
-@media (max-width:505px) {
-    #opening-image {
-        max-width: 100vw;
-        height: 30vh;
-        background-image: url('./photos/home.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
-    }
-    #opening-image2 {
-        max-width: 100vw;
-        height: 30vh;
-        background-image: url('./photos/home.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
-    }
-
-}
-
-@media (max-width:410px) {
-    #opening-image {
-        background-image: url('./photos/mobile-view.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
-    }
-    #opening-image2 {
-        background-image: url('./photos/mobile-view.png');
-        background-size: cover;
-        border-radius: 5px;
-        margin: 0 auto;
-    }
-
-} */
