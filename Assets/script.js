@@ -122,8 +122,6 @@ fetch(RECIPE_SEARCH_ENDPOINT)
             for (var i = 0; i < data.hits.length; i++) {
             
                 // create card elements
-
-                
                 
                 //card itself
                 var cardEl = document.createElement('div');

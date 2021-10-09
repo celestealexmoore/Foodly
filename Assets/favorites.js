@@ -6,8 +6,8 @@ const recipesEl = document.getElementById('recipe-returns')
 
 favorites.forEach(function(el) {
 
-   var cardEl = document.createElement('div');
-   cardEl.classList.add('card'); 
+var cardEl = document.createElement('div');
+cardEl.classList.add('card'); 
 
                 var cardContentEl = document.createElement('div');
                 cardContentEl.classList.add('card-content');
@@ -32,8 +32,7 @@ favorites.forEach(function(el) {
                     'href', 
                     `${el.recipe}`
                 );
-                cardLinkEL.textContent = "Click to view recipe!"
-                  
+                cardLinkEL.textContent = "Click to view recipe!"   
    
                 cardEl.appendChild(cardContentEl);
                 cardContentEl.appendChild(cardTitleEl);

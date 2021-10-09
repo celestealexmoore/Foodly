@@ -63,6 +63,11 @@ body{
     font-size: 20px;
 }
 
+#dietChoice {
+    width:30%;
+    height: auto;
+}
+
 #bottom-section{
     width:99.5%;
     height:80%;
@@ -203,4 +208,14 @@ color: rgb(39, 70, 39, 0.5);
     .image-2 {
     display: block;
     }
+    /* #dietChoice {
+    } */
+/* ^^^^^^ this is the img text. */
+
+
+    /* #diet-div {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    } */
 }
