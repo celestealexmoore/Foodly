@@ -218,4 +218,10 @@ color: rgb(39, 70, 39, 0.5);
         flex-flow: column nowrap;
         justify-content: center;
     } */
+
+    #favoritesButton {
+        width:90px;
+        height: 40px;
+        font-size:smaller;
+    }
 }
