@@ -208,16 +208,15 @@ color: rgb(39, 70, 39, 0.5);
     .image-2 {
     display: block;
     }
-    /* #dietChoice {
-    } */
+    #dietChoice {
+        width:70%;
+        height: auto;
+    }
 /* ^^^^^^ this is the img text. */
-
-
-    /* #diet-div {
+    #diet-div {
         display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-    } */
+        text-align: center;
+    }
 
     #favoritesButton {
         width:90px;
